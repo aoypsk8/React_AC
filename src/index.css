@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .text-title-contact {
+    @apply text-white font-bold text-lg;
+  }
+  .text-sub-contact {
+    @apply text-white  text-sm mt-1;
+  }
+}
