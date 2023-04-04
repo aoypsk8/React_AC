@@ -98,6 +98,7 @@ const Register = () => {
 
           <div class="md:block hidden w-1/2">
             <img
+            alt=""
               class="rounded-2xl"
               src="https://s.yimg.com/uu/api/res/1.2/0GorG_57tfyN8tLvQtnlAA--~B/aD0yMDA2O3c9MTQ5NDthcHBpZD15dGFjaHlvbg--/https://media.zenfs.com/en/country_living_105/b2cd355b2191c09ea1899c9a12f5a06f"
             />

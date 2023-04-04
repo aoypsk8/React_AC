@@ -2,7 +2,7 @@ import { FreeMode } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/free-mode";
-import CardCategory from "./card-cate/Card_Category";
+import CardCategory from "./card-category/Card_Category";
 import dc from "../Image/images-category/dc.jpg";
 import disney from "../Image/images-category/disney.jpg";
 import marvel from "../Image/images-category/marvel.jpg";

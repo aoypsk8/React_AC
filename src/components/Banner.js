@@ -21,7 +21,7 @@ function Banner() {
   useEffect(() => {
     let slider = setInterval(() => {
       setIndex(index + 1);
-    }, 5000);
+    }, 3000);
     return () => {
       clearInterval(slider);
     };

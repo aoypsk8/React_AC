@@ -6,11 +6,13 @@ import ContinueMovie from "../Continue";
 import PopularMovie from "../PopularMovie";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
+// import requests from "../../api/Requests";
 
 function Home() {
   return (
     //font-noto
     <div className="h-auto bg-[#262626]">
+      {/* {JSON.stringify(movie)} */}
       <Navbar />
       <Banner />
       <Category />

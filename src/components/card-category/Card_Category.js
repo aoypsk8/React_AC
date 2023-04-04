@@ -7,6 +7,7 @@ function CardCategory(props) {
         <img
           src={imgSrc}
           className="h-[100%] w-[100%] rounded-lg"
+          alt=""
         />
       </div>
   );
