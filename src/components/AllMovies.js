@@ -21,7 +21,7 @@ function AllMovies() {
       });
   }, []);
   return (
-    <div className="h-[100%] mx-40 mt-24 grid grid-cols-4 gap-20">
+    <div className="mx-10 h-[100%] mt-10 grid grid-cols-2 md:mx-40 gap-8 md:mt-24 md:grid md:grid-cols-4 md:gap-20 ">
       {movies.map((item) => {
         return (
           <div key={item.id}>

@@ -22,7 +22,7 @@ function PopularMovie() {
       });
   }, []);
   return (
-    <div className=" h-[360px] w- mx-40 mt-10">
+    <div className="h-[300px] md:h-[360px]  mx-10 mt-10 md:mx-40">
       {/* {mo.map((item) => (
         <div key={item.id}>{item.id}</div>
       ))} */}
@@ -31,12 +31,32 @@ function PopularMovie() {
         grabCursor={true}
         modules={[FreeMode]}
         className="mySwiper h-[100%]"
-        slidesPerView={5}
-        spaceBetween={30}
+        breakpoints={{
+          0: {
+            slidesPerView: 3,
+            spaceBetween: 10,
+          },
+          480: {
+            slidesPerView: 3,
+            spaceBetween: 10,
+          },
+          760: {
+            slidesPerView: 3,
+            spaceBetween: 15,
+          },
+          1024: {
+            slidesPerView: 4,
+            spaceBetween: 15,
+          },
+          1250: {
+            slidesPerView: 5,
+            spaceBetween: 30,
+          },
+        }}
       >
         {movies.map((item) => {
           return (
-            <SwiperSlide className="p-2 " key={item.id}>
+            <SwiperSlide className="md:p-2 " key={item.id}>
               <CardPopular data={item} />
             </SwiperSlide>
           );

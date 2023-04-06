@@ -28,7 +28,7 @@ function Banner() {
   }, [index]);
 
   return (
-    <div className="section">
+    <div className="section hidden lg:block relative">
       <div className="section-center">
         {data.map((item, indexPeople) => {
           const { id, image, title, description } = item;
@@ -44,7 +44,7 @@ function Banner() {
           }
           return (
             <article className={position} key={id}>
-              <div className="bg-gray-600 h-[100%] relative">
+              <div className=" h-[100%] relative top-24">
                 <div className="absolute z-40 top-[100px] left-[80px] text-white text-5xl font-bold">
                   {title}
                 </div>

@@ -2,8 +2,8 @@ import React from "react";
 
 function Footer() {
   return (
-    <div className="bg-black h-[296px] mt-40 ">
-      <div className=" ml-[280px] flex justify-evenly pt-20 ">
+    <div className="bg-black h-[296px] mt-20 md:mt-40 ">
+      <div className=" md:ml-[280px] flex justify-evenly pt-20 ">
         <div >
           <p className="text-title-contact">Help</p>
           <p className="text-sub-contact">Help center</p>

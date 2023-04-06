@@ -16,51 +16,69 @@ import un from "../Image/images-category/un.jpg";
 import wb from "../Image/images-category/wb.jpg";
 export default function Category() {
   return (
-    <div className=" h-28 mx-40">
+    <div className="mx-10 h-32 mt-10  md:mx-40 ">
       <Swiper
         freeMode={true}
         grabCursor={true}
         modules={[FreeMode]}
         className="mySwiper h-[100%]"
-        slidesPerView={5}
-        spaceBetween={30}
+        breakpoints={{
+          0: {
+            slidesPerView: 3,
+            spaceBetween: 10,
+          },
+          480: {
+            slidesPerView: 3,
+            spaceBetween: 10,
+          },
+          760: {
+            slidesPerView: 3,
+            spaceBetween: 15,
+          },
+          1024: {
+            slidesPerView: 4,
+            spaceBetween: 15,
+          },
+          1250: {
+            slidesPerView: 5,
+            spaceBetween: 30,
+          },
+        }}
       >
-        <SwiperSlide className="p-2 ">
+        <SwiperSlide className="md:p-2 ">
           <CardCategory data={{ imgSrc: dc }} />
         </SwiperSlide>
-        <SwiperSlide className="p-2 ">
+        <SwiperSlide className="md:p-2 ">
           <CardCategory data={{ imgSrc: disney }} />
         </SwiperSlide>
-        <SwiperSlide className="p-2 ">
+        <SwiperSlide className="md:p-2 ">
           <CardCategory data={{ imgSrc: marvel }} />
         </SwiperSlide>
-        <SwiperSlide className="p-2 ">
+        <SwiperSlide className="md:p-2 ">
           <CardCategory data={{ imgSrc: pixar }} />
         </SwiperSlide>
-        <SwiperSlide className="p-2 ">
+        <SwiperSlide className="md:p-2 ">
           <CardCategory data={{ imgSrc: star }} />
         </SwiperSlide>
-        <SwiperSlide className="p-2 ">
+        <SwiperSlide className="md:p-2 ">
           <CardCategory data={{ imgSrc: netflix1 }} />
         </SwiperSlide>
-        <SwiperSlide className="p-2 ">
+        <SwiperSlide className="md:p-2 ">
           <CardCategory data={{ imgSrc: colombi }} />
         </SwiperSlide>
-        <SwiperSlide className="p-2 ">
+        <SwiperSlide className="md:p-2 ">
           <CardCategory data={{ imgSrc: dm }} />
         </SwiperSlide>
-        <SwiperSlide className="p-2 ">
+        <SwiperSlide className="md:p-2 ">
           <CardCategory data={{ imgSrc: fox }} />
         </SwiperSlide>
-        <SwiperSlide className="p-2 ">
+        <SwiperSlide className="md:p-2 ">
           <CardCategory data={{ imgSrc: un }} />
         </SwiperSlide>
-        <SwiperSlide className="p-2 ">
+        <SwiperSlide className="md:p-2 ">
           <CardCategory data={{ imgSrc: wb }} />
         </SwiperSlide>
       </Swiper>
     </div>
   );
 }
-
-

@@ -8,7 +8,7 @@ import CardContinue from "./Cards/Card_Continue";
 function ContinueMovie() {
   const API_URL =
     "https://api.themoviedb.org/3/movie/now_playing?api_key=b19963e9b16345156607f460bfeb06e6";
-    // https://api.themoviedb.org/3/movie/top_rated?api_key=b19963e9b16345156607f460bfeb06e6
+  // https://api.themoviedb.org/3/movie/top_rated?api_key=b19963e9b16345156607f460bfeb06e6
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -23,7 +23,7 @@ function ContinueMovie() {
       });
   }, []);
   return (
-    <div className=" h-[360px] w- mx-40 mt-10">
+    <div className="h-[300px] md:h-[360px]  mx-10 mt-10 md:mx-40">
       {/* {mo.map((item) => (
         <div key={item.id}>{item.id}</div>
       ))} */}
@@ -32,12 +32,32 @@ function ContinueMovie() {
         grabCursor={true}
         modules={[FreeMode]}
         className="mySwiper h-[100%]"
-        slidesPerView={5}
-        spaceBetween={30}
+        breakpoints={{
+          0: {
+            slidesPerView: 3,
+            spaceBetween: 10,
+          },
+          480: {
+            slidesPerView: 3,
+            spaceBetween: 10,
+          },
+          760: {
+            slidesPerView: 3,
+            spaceBetween: 15,
+          },
+          1024: {
+            slidesPerView: 4,
+            spaceBetween: 15,
+          },
+          1250: {
+            slidesPerView: 5,
+            spaceBetween: 30,
+          },
+        }}
       >
         {movies.map((item) => {
           return (
-            <SwiperSlide className="p-2 " key={item.id}>
+            <SwiperSlide className="md:p-2 " key={item.id}>
               <CardContinue data={item} />
             </SwiperSlide>
           );

@@ -4,9 +4,9 @@
 
 @layer components {
   .text-title-contact {
-    @apply text-white font-bold text-lg;
+    @apply text-white text-base font-bold md:text-lg;
   }
   .text-sub-contact {
-    @apply text-white  text-sm mt-1;
+    @apply text-white text-xs mt-1 md:text-sm md:mt-1;
   }
 }

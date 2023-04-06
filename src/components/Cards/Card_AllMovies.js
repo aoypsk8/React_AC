@@ -11,18 +11,18 @@ function CardAllMoives(props) {
   const baseImg =`https://www.themoviedb.org/t/p/w220_and_h330_face${data.poster_path}`
   return (
     <Link to={`/allmovie/${data.id}`}  style={{ textDecoration: 'none' }}>
-      <div className=" h-[90%] ">
-        <img src={baseImg} alt="1" className="h-[98%] w-[100%] rounded-lg" />
+      <div className="h-[90%] md:h-[90%]">
+        <img src={baseImg} alt="1" className="h-[95%] w-[88%] md:h-[98%] md:w-[100%] rounded-lg" />
       </div>
-      <p className="text-white">{data.original_title}</p>
-      <div className="flex justify-between">
-        <p className="text-white">{data.release_date}</p>
+      <p className="text-white text-sm md:text-base">{data.original_title}</p>
+      <div className="md:flex md:justify-between  hidden">
+        <p className="text-white text-sm md:text-base">{data.release_date}</p>
         <div className="flex">
-          <AiFillHeart className="w-[18px] h-[18px] mt-[2px] mr-1 text-white" />
-          <IoEyeSharp className="w-[18px] h-[18px] mt-[2px] mr-1 text-white" />
+          <AiFillHeart className="md:w-[18px] md:h-[18px] md:mt-[2px]  text-white" />
+          <IoEyeSharp className="mr-1 md:w-[18px] md:h-[18px] md:mt-[2px] md:mr-1 text-white" />
           <div className="flex justify-center">
-            <BsFillStarFill className="w-[15px] h-[15px] mt-[2px] mr-1 text-white" />
-            <p className="text-white">{data.vote_average}</p>
+            <BsFillStarFill className="md:w-[15px] md:h-[15px] md:mt-[2px] md:mr-1 text-white" />
+            <p className="text-white text-sm md:text-base">{data.vote_average}</p>
           </div>
         </div>
       </div>

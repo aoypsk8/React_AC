@@ -1,12 +1,10 @@
 // rafce
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Swal from "sweetalert2";
+import swal from "sweetalert";
 
 const Register = () => {
   const [value, setValue] = useState({
-    userName: "",
-    phoneNumber: "",
     password: "",
     email: "",
   });
@@ -22,8 +20,12 @@ const Register = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    Swal.fire("ລົງທະບຽນແລ້ວ ໆ");
-    navigate("/")
+    swal({
+      title: "Register Sucress!",
+      icon: "success",
+    });
+
+    navigate("/");
   };
 
   return (
@@ -35,25 +37,12 @@ const Register = () => {
             <form action="" class="flex flex-col gap-4" onSubmit={handleSubmit}>
               <input
                 class="p-2 mt-8 rounded-xl border"
-                type="text"
-                name="userName"
-                placeholder="Username"
-                onChange={handleChange}
-              />
-              <input
-                class="p-2  rounded-xl border"
                 type="email"
                 name="email"
-                placeholder="email@gmail.com"
+                placeholder="email"
                 onChange={handleChange}
               />
-              <input
-                class="p-2  rounded-xl border"
-                type="text"
-                name="phoneNumber"
-                placeholder="Phone Number"
-                onChange={handleChange}
-              />
+
               <div class="relative">
                 <input
                   class="p-2 rounded-xl border w-full"
@@ -98,7 +87,7 @@ const Register = () => {
 
           <div class="md:block hidden w-1/2">
             <img
-            alt=""
+              alt=""
               class="rounded-2xl"
               src="https://s.yimg.com/uu/api/res/1.2/0GorG_57tfyN8tLvQtnlAA--~B/aD0yMDA2O3c9MTQ5NDthcHBpZD15dGFjaHlvbg--/https://media.zenfs.com/en/country_living_105/b2cd355b2191c09ea1899c9a12f5a06f"
             />

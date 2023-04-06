@@ -1,6 +1,6 @@
 .section {
   position: relative;
-  height: 640px;
+  height: 750px;
 }
 
 .section-center {
@@ -8,7 +8,7 @@
   top: 40px;
   left: 160px;
   width: 1200px;
-  height: 550px;
+  height: 700px;
   display: flex;
   overflow: hidden;
 }
@@ -52,7 +52,7 @@ article.nextSlide {
 .prev,
 .next {
   position: absolute;
-  top: 280px;
+  top: 400px;
   transform: translateY(-50%);
   cursor: pointer;
   transition: all 0.3s linear;

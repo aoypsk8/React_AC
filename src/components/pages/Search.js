@@ -41,8 +41,8 @@ function Search() {
   return (
     <div className="h-auto bg-[#262626] ">
       <Navbar />
-      <form onSubmit={handleSearch} className="flex justify-center pt-16">
-        <div class="relative flex items-center text-gray-400 focus-within:text-gray-600 col-span-2 w-[700px] h-[60px] ">
+      <form onSubmit={handleSearch} className="flex justify-center pt-24 md:pt-36">
+        <div class="relative flex items-center text-gray-400 focus-within:text-gray-600 col-span-2 w-[300px] h-[40px] md:w-[700px] md:h-[60px] ">
           <img
             src={search}
             alt="search"
@@ -62,8 +62,8 @@ function Search() {
           />
         </div>
       </form>
-      <div className="mx-40 ">
-        <div className="grid grid-cols-4 gap-20  pt-16">
+      <div className="md:mx-14 mx-10 ">
+        <div className="mx-10 h-[100%] mt-10 grid grid-cols-2 md:mx-40 gap-8 md:mt-24 md:grid md:grid-cols-4 md:gap-20 ">
           {movies.map((item) => {
             return (
               <div key={item.id}>

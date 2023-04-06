@@ -29,32 +29,32 @@ const DetailContinue = () => {
   return (
     <div className="bg-[#262626]">
       <Navbar />
-      <div className=" h-[550px] w-[100%] flex justify-center">
-        <div className="bg-red-300 my-10 mx-10 h-[450px] w-[100%] relative">
+      <div className="w-[100%] flex justify-center md:h-[620px] relative md:top-24 top-16 ">
+        <div className="bg-red-300 my-10 mx-5 md:mx-10 h-[280px] md:h-[450px] w-[100%] relative">
           {/* card */}
-          <div className="absolute h-[100%] w-[100%] z-0">
+          <div className="absolute h-[100%] w-[100%] z-0 md:h-[100%] md:w-[100%]">
             <img
               src={baseImgBg}
               alt=""
               className="h-[100%] w-[100%] object-cover opacity-70"
             />
           </div>
-          <div className="absolute h-[100%] w-[100%] flex mx-10 ">
-            <div className="h-[100%] w-[25%] ">
+          <div className="absolute h-[70%] top-12 md:top-0 w-[100%] md:h-[100%] md:w-[100%] flex md:mx-10 mx-4">
+            <div className="h-[100%] w-[100%] md:w-[25%] ">
               <img
                 src={baseImg}
                 alt=""
-                className="h-[100%] w-[100%] object-none rounded-xl"
+                className="md:h-[100%] md:w-[100%] h-[90%] w-[90%] md:object-none object-cover rounded-xl"
               />
             </div>
             {/* detail */}
-            <div className="h-[75%] w-[70%] mt-12">
+            <div className="h-[75%] w-[70%] md:mt-12 mr-4">
               <div>
                 {/* title */}
-                <p className="text-5xl font-bold text-white">
+                <p className="text-xl md:text-5xl font-bold text-white">
                   {movies?.original_title}
                 </p>
-                <p className="text-gray-300 text-lg mt-3 font-bold">
+                <p className="text-gray-300 text-base md:text-lg mt-3 font-bold">
                   {movies?.release_date} |
                   <span className="mx-3 font-bold">
                     {movies?.genres.map((genres) => {
@@ -66,14 +66,14 @@ const DetailContinue = () => {
                     {movies?.runtime} Minutes
                   </span>
                 </p>
-                <p className="text-xl text-white  mt-3 font-bold">
+                <p className="hidden md:block text-xl text-white  mt-3 font-bold">
                   Overview :{" "}
                   <span className="text-lg text-gray-300 font-bold">
                     {movies?.overview}
                   </span>
                 </p>
 
-                <p className="text-xl text-white  mt-3 font-bold">
+                <p className="text-xl text-white  mt-3 font-bold hidden md:block">
                   Author:
                   {movies?.production_companies.map((author) => {
                     return (
@@ -85,61 +85,82 @@ const DetailContinue = () => {
                   })}
                 </p>
               </div>
-              <div className="flex mt-5">
-                <button className="absolute z-40 top-[340px] left-[360px] w-[150px] h-[45px] bg-[#262626] rounded-full flex">
-                  <BsPlayFill className="icons-button-play pb-2 ml-2" />
-                  <p className="text-red-600 text-lg pt-2">Watch</p>
-                </button>
-                <button className="absolute z-40 top-[340px] left-[500px] w-[150px] h-[45px] bg-[#262626]  rounded-full flex ml-10">
-                  <AiOutlinePlus className="icons-button-play pb-2 ml-1" />
-                  <p className="text-red-600 text-lg pt-2">Add List</p>
-                </button>
+              <div className="hidden md:block">
+                <div className="flex mt-5 ">
+                  <button className="absolute z-40 top-[340px] left-[360px] w-[150px] h-[45px] bg-[#262626] rounded-full flex">
+                    <BsPlayFill className="icons-button-play pb-2 ml-2" />
+                    <p className="text-red-600 text-lg pt-2">Watch</p>
+                  </button>
+                  <button className="absolute z-40 top-[340px] left-[500px] w-[150px] h-[45px] bg-[#262626]  rounded-full flex ml-10">
+                    <AiOutlinePlus className="icons-button-play pb-2 ml-1" />
+                    <p className="text-red-600 text-lg pt-2">Add List</p>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
       {/* detail movies */}
-      <div className="mx-40 h-[500px] ">
-        <p className="text-3xl font-bold text-white ">Detail Movies</p>
-        <div className="mx-10 mt-5">
+      <div className=" mx-5 mt-10 md:mx-40 md:h-[500px] ">
+        <p className="text-xl md:text-3xl font-bold text-white ">
+          Detail Movies
+        </p>
+        <div className="mx-5 mt-1 md:mx-10 md:mt-5">
           {/* title */}
-          <p className="text-2xl  text-white">
-            <span className="text-2xl font-bold text-white">Name : </span>
+          <p className="text-base md:text-2xl text-white">
+            <span className="text-lg md:text-2xl font-bold text-white">
+              Name :{" "}
+            </span>
             {movies?.original_title}
           </p>
-          <p className="text-white text-lg mt-3">
-            <span className="text-2xl font-bold text-white">Create At : </span>
+          <p className="text-white text-base md:text-2xl md:mt-3">
+            <span className="text-lg md:text-2xl font-bold text-white">
+              Create At :{" "}
+            </span>
             {movies?.release_date}
           </p>
-          <p className="text-white text-lg mt-1">
-            <span className="text-2xl font-bold text-white">Time : </span>
+          <p className="text-white text-base md:text-2xl md:mt-1">
+            <span className="text-lg md:text-2xl  font-bold text-white">
+              Time :{" "}
+            </span>
             <span className="mx-3 ">{movies?.runtime} Minutes</span>
           </p>
-          <p className="text-2xl text-white mt-1">
-            <span className="text-2xl font-bold text-white">Genre : </span>
+          <p className="text-base md:text-2xl text-white md:mt-1">
+            <span className="text-lg md:text-2xl font-bold text-white">
+              Genre :{" "}
+            </span>
             {movies?.genres.map((genres) => {
               return <span>{genres.name} | </span>;
             })}
           </p>
-          <p className="text-xl text-white  mt-3 ">
-            <span className="text-2xl font-bold text-white">Detail : </span>
-            <span className="text-lg text-white ">{movies?.overview}</span>
+          <p className="text-base md:text-2xl text-white md:mt-3">
+            <span className="text-lg md:text-2xl font-bold text-white">
+              Detail :{" "}
+            </span>
+            <span className="text-base md:text-2xl text-white ">
+              {movies?.overview}
+            </span>
           </p>
 
-          <p className="text-xl text-white  mt-1">
-            <span className="text-2xl font-bold text-white">Author : </span>
+          <p className="text-base md:text-2xl text-white md:mt-1">
+            <span className="text-lg md:text-2xl font-bold text-white">
+              Author :{" "}
+            </span>
             {movies?.production_companies.map((author) => {
               return (
-                <span className="text-lg text-white "> {author.name} | </span>
+                <span className="text-base md:text-2xl text-white ">
+                  {" "}
+                  {author.name} |{" "}
+                </span>
               );
             })}
           </p>
         </div>
       </div>
       {/* Recomment Movies */}
-      <div className=" mt-[-140px] h-[500px] ">
-        <p className=" text-3xl text-white mx-40 mt-10 font-bold">
+      <div className=" md:mt-[-140px] md:h-[500px] ">
+        <p className="text-xl mt-2 mx-5 md:text-3xl text-white md:mx-40 md:mt-10 font-bold">
           Recomment Movie{" "}
         </p>
         <PopularMovie />

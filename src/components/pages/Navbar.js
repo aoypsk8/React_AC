@@ -1,48 +1,48 @@
-import React from "react";
-import { BsSearch, BsListCheck } from "react-icons/bs";
-import { AiFillHome, AiFillHeart } from "react-icons/ai";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Navbar() {
+  let Links = [
+    { name: "HOME", link: "/home" },
+    { name: "SEARCH", link: "/search" },
+    { name: "ABOUT", link: "/" },
+    { name: "BLOG'S", link: "/" },
+    { name: "CONTACT", link: "/" },
+  ];
+  let [open, setOpen] = useState(false);
   return (
-    <div className="px-12 pt-7 pb-6 bg-black">
-      <div className="flex justify-between items-center">
-        {/* Logo */}
-        <Link to={"/home"} >
-          <p className="text-red-700 text-4xl font-black hover:cursor-pointer hover:text-[37.8px] duration-1000 ">
-            D-Flix plus
-          </p>
+    <div className="shadow-md w-full fixed top-0 left-0 z-50 md:h-24">
+      <div className="h-[100%] md:flex items-center justify-between bg-black py-4 md:px-10 px-7">
+        <Link to={'/home'}
+          className="font-bold text-4xl cursor-pointer flex items-center font-[Poppins] 
+    text-red-500 hover:text-[38px] transition-all duration-500 ease-in"
+        >
+          D-Flex Plus
         </Link>
-        {/* Menu and profile */}
-        <div className="flex justify-center relative">
-          {/* menu */}
-          <div className="text-white flex justify-center">
-            <Link to={"/home"} className="flex justify-center pr-10 hover:cursor-pointer  hover:text-red-700 hover:underline  duration-1000  ">
-              <AiFillHome className="w-[21px] h-[21px] mt-1" />
-              <p className="pl-2 text-lg ">Home</p>
-            </Link>
-            <Link to={"/search"} className="flex justify-center pr-10 hover:cursor-pointer hover:text-red-700 hover:underline duration-1000">
-              <BsSearch className="w-[21px] h-[21px] mt-1" />
-              <p className="pl-2 text-lg">Search</p>
-            </Link>
-            <div className="flex justify-center pr-10 hover:cursor-pointer hover:text-red-700 hover:underline duration-1000">
-              <BsListCheck className="w-[21px] h-[21px] mt-1" />
-              <p className="pl-2 text-lg">Watch List</p>
-            </div>
-            <div className="flex justify-center pr-16 hover:cursor-pointer hover:text-red-700 hover:underline duration-1000">
-              <AiFillHeart className="w-[21px] h-[21px] mt-1" />
-              <p className="pl-2 text-lg">Favorites</p>
-            </div>
-            {/* Profile */}
-            <div className="flex ml-9 hover:cursor-pointer">
-              <img
-                src="https://th.bing.com/th/id/OIP.RKYNRfhBdQvvFQHXPehUKAHaFj?pid=ImgDet&rs=1"
-                class="rounded-full shadow-lg w-[60px] h-[60px] absolute  top-[-20px]  right-[0px]"
-                alt="Avatar"
-              />
-            </div>
-          </div>
+
+        <div
+          onClick={() => setOpen(!open)}
+          className="text-3xl absolute right-8 top-5  cursor-pointer md:hidden bg-slate-600"
+        >
+          <ion-icon name={open ? "close" : "menu"}></ion-icon>
         </div>
+
+        <ul
+          className={`bg-black  md:flex md:items-center md:pb-0 pb-12 absolute md:static  md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${
+            open ? "top-16 " : "top-[-490px]"
+          }`}
+        >
+          {Links.map((link) => (
+            <li key={link.name} className="md:ml-8 text-xl md:my-0 my-7">
+              <a
+                href={link.link}
+                className="text-white hover:text-red-400 hover:underline  duration-500"
+              >
+                {link.name}
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );

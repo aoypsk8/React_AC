@@ -1,12 +1,12 @@
 //rafce
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Swal from "sweetalert2";
+import swal from "sweetalert";
 
 const Login = () => {
     const navigate = useNavigate();
   const [value, setValue] = useState({
-    phoneNumber: "",
+    email: "",
     password: "",
   });
 
@@ -19,7 +19,10 @@ const Login = () => {
   console.log(value);
   const handleSubmit = (e) => {
     e.preventDefault();
-    Swal.fire("Sucress");
+    swal({
+      title: "Login Sucress!",
+      icon: "success",
+    });
     navigate("/home")
   };
 
@@ -39,9 +42,9 @@ const Login = () => {
             >
               <input
                 className="p-2 mt-8 rounded-xl border"
-                type="text"
-                name="phoneNumber"
-                placeholder="Phone Number"
+                type="email"
+                name="email"
+                placeholder="email"
                 onChange={handleChange}
               />
 
