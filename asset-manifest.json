@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/React_AC/static/css/main.fe8098fd.css",
+    "main.js": "/React_AC/static/js/main.39090c41.js",
+    "static/js/787.d3befce1.chunk.js": "/React_AC/static/js/787.d3befce1.chunk.js",
+    "static/media/dm.png": "/React_AC/static/media/dm.4f15e0198a9cdbd7b314.png",
+    "static/media/marvel.jpg": "/React_AC/static/media/marvel.5edfafd46b9ba3dc0952.jpg",
+    "static/media/star.jpg": "/React_AC/static/media/star.0a1538421a4d3b679159.jpg",
+    "static/media/pixar.png": "/React_AC/static/media/pixar.5eb1ab88dbb26ab23061.png",
+    "static/media/fox.png": "/React_AC/static/media/fox.4bc3a8fffcf979f46cc2.png",
+    "static/media/un.jpg": "/React_AC/static/media/un.15bcb36151cfd3e1030a.jpg",
+    "static/media/colombi.jpg": "/React_AC/static/media/colombi.951717076dd77911d11b.jpg",
+    "static/media/wb.jpg": "/React_AC/static/media/wb.ddd3fba9b0e1440cae7c.jpg",
+    "static/media/disney.jpg": "/React_AC/static/media/disney.abf950780ea3b89bcf36.jpg",
+    "static/media/dc.jpg": "/React_AC/static/media/dc.043a665a6bb2446a53cf.jpg",
+    "index.html": "/React_AC/index.html",
+    "main.fe8098fd.css.map": "/React_AC/static/css/main.fe8098fd.css.map",
+    "main.39090c41.js.map": "/React_AC/static/js/main.39090c41.js.map",
+    "787.d3befce1.chunk.js.map": "/React_AC/static/js/787.d3befce1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fe8098fd.css",
+    "static/js/main.39090c41.js"
+  ]
+}
