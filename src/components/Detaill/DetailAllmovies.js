@@ -15,6 +15,7 @@ const DetailAllMovies = () => {
 
   const API_URL = `https://api.themoviedb.org/3/movie/${allmovieId}?api_key=b19963e9b16345156607f460bfeb06e6`;
   useEffect(() => {
+    window.scrollTo(0, 0)
     fetch(API_URL)
       .then((res) => res.json())
       .then((data) => {
@@ -26,6 +27,7 @@ const DetailAllMovies = () => {
       })
       .catch((error) => console.log(error));
   }, [API_URL]);
+  
   return (
     <div className="bg-[#262626]">
       <Navbar />

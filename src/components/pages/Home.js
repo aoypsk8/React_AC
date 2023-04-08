@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import AllMovies from "../AllMovies";
 import Banner from "../Banner";
 import Category from "../Category";
@@ -9,6 +9,9 @@ import Navbar from "./Navbar";
 // import requests from "../../api/Requests";
 
 function Home() {
+  useEffect(()=>{
+    window.scrollTo(0, 0)
+  },[])
   return (
     //font-noto
     <div className="h-auto bg-[#262626] w-[100%]">

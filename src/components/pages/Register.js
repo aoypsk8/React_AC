@@ -1,12 +1,14 @@
 // rafce
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import swal from "sweetalert";
+import { auth } from "../../firebase";
 
 const Register = () => {
   const [value, setValue] = useState({
-    password: "",
     email: "",
+    password: "",
   });
   const navigate = useNavigate();
   console.log(value);
@@ -18,14 +20,34 @@ const Register = () => {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    swal({
-      title: "Register Sucress!",
-      icon: "success",
-    });
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   swal({
+  //     title: "Register Sucress!",
+  //     icon: "success",
+  //   });
 
-    navigate("/");
+  //   navigate("/");
+  // };
+
+  const HandleSignUp = (e) => {
+    e.preventDefault();
+    createUserWithEmailAndPassword(auth, value.email, value.password)
+      .then((userCredential) => {
+        swal({
+          title: "Register Sucress!",
+          icon: "success",
+        });
+    
+        navigate("/");
+      })
+      .catch((error) => {
+        console.log(error);
+        swal({
+          title: "Register fall!",
+          icon: "error",
+        });
+      });
   };
 
   return (
@@ -34,7 +56,7 @@ const Register = () => {
         <div class=" flex rounded-2xl shadow-lg max-w-3xl p-5 items-center bg-white">
           <div class="md:w-1/2 px-8 md:px-16">
             <h2 class="font-bold text-2xl text-[#002D74]">Register</h2>
-            <form action="" class="flex flex-col gap-4" onSubmit={handleSubmit}>
+            <form action="" class="flex flex-col gap-4" onSubmit={HandleSignUp}>
               <input
                 class="p-2 mt-8 rounded-xl border"
                 type="email"

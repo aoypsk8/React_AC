@@ -17,6 +17,7 @@ function Search() {
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
+    window.scrollTo(0, 0)
     fetch(API_URL)
       .then((res) => res.json())
       .then((data) => {

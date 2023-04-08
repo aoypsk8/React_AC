@@ -15,6 +15,7 @@ const DetailPopular = () => {
 
   const API_URL = `https://api.themoviedb.org/3/movie/${popularId}?api_key=b19963e9b16345156607f460bfeb06e6`;
   useEffect(() => {
+    window.scrollTo(0, 0)
     fetch(API_URL)
       .then((res) => res.json())
       .then((data) => {

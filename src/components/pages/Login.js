@@ -1,10 +1,12 @@
 //rafce
+import { signInWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import swal from "sweetalert";
+import { auth } from "../../firebase";
 
 const Login = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   const [value, setValue] = useState({
     email: "",
     password: "",
@@ -17,13 +19,32 @@ const Login = () => {
     });
   };
   console.log(value);
-  const handleSubmit = (e) => {
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   swal({
+  //     title: "Login Sucress!",
+  //     icon: "success",
+  //   });
+  //   navigate("/home");
+  // };
+
+  const handleSignIn = (e) => {
     e.preventDefault();
-    swal({
-      title: "Login Sucress!",
-      icon: "success",
-    });
-    navigate("/home")
+    signInWithEmailAndPassword(auth,value.email, value.password)
+      .then(() => {
+        swal({
+          title: "Login Sucress!",
+          icon: "success",
+        });
+        navigate("/home");
+      })
+      .catch((error) => {
+        console.log(error);
+        swal({
+          title: "Login fall!",
+          icon: "fall",
+        });
+      });
   };
 
   return (
@@ -38,7 +59,7 @@ const Login = () => {
             <form
               action=""
               className="flex flex-col gap-4"
-              onSubmit={handleSubmit}
+              onSubmit={handleSignIn}
             >
               <input
                 className="p-2 mt-8 rounded-xl border"
@@ -73,17 +94,16 @@ const Login = () => {
               </button>
             </form>
 
-            
-
-            
-
             <div className="mt-5 text-xs border-b border-[#002D74] py-4 text-[#002D74]">
               <p>Forgot your password?</p>
             </div>
 
             <div className="mt-3 text-xs flex justify-between items-center text-[#002D74]">
               <p>Don't have an account?</p>
-              <Link to={"/register"} className="py-2 px-5 bg-white border rounded-xl hover:scale-110 duration-300">
+              <Link
+                to={"/register"}
+                className="py-2 px-5 bg-white border rounded-xl hover:scale-110 duration-300"
+              >
                 Register
               </Link>
             </div>

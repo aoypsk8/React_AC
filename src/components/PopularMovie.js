@@ -11,9 +11,11 @@ function PopularMovie() {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    // axios.get(requests.requestPopular).then((res)=>{
-    //   setMo(res.data.results);
-    // })
+    // axios.get(API_URL)
+    // .then((res) => res.json())
+    // .then((res)=>{
+    //   setMovies(data.results);
+    // });
     fetch(API_URL)
       .then((res) => res.json())
       .then((data) => {
