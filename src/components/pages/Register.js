@@ -44,7 +44,7 @@ const Register = () => {
       .catch((error) => {
         console.log(error);
         swal({
-          title: "Register fall!",
+          title: "Can't Register !",
           icon: "error",
         });
       });

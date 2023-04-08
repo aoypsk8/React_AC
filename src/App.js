@@ -8,12 +8,8 @@ import Home from "./components/pages/Home";
 import DetailPopular from "./components/Detaill/DetailPopular";
 import DetailContinue from "./components/Detaill/DetailContinue";
 import DetailAllMovies from "./components/Detaill/DetailAllmovies";
-import { useEffect } from "react";
 import Search from "./components/pages/Search";
 export default function App() {
-  useEffect(()=>{
-
-  })
   return (
     <BrowserRouter>
       <Routes>

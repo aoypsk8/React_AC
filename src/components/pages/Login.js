@@ -41,8 +41,8 @@ const Login = () => {
       .catch((error) => {
         console.log(error);
         swal({
-          title: "Login fall!",
-          icon: "fall",
+          title: "Can't Login!",
+          icon: "error",
         });
       });
   };
