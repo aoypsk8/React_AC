@@ -58,11 +58,11 @@ const DetailAllMovies = () => {
                 </p>
                 <p className="text-gray-300 text-base md:text-lg mt-3 font-bold">
                   {movies?.release_date} |
-                  <span className="mx-3 font-bold">
+                  {/* <span className="mx-3 font-bold">
                     {movies?.genres.map((genres) => {
                       return <span>{genres.name}</span>;
                     })}
-                  </span>{" "}
+                  </span>{" "} */}
                   |
                   <span className="mx-3 font-bold">
                     {movies?.runtime} Minutes
